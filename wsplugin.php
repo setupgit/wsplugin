@@ -9,6 +9,39 @@ Author URI: https://example.com
 */
 
 
+
+
+// Add authorization header with access token
+$headers = array(
+    'Authorization: Bearer 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'
+);
+
+$api_url = 'https://api.github.com/repos/' . GITHUB_USERNAME . '/' . GITHUB_REPOSITORY . '/releases/latest';
+
+// Initialize cURL
+$ch = curl_init();
+
+// Set the API URL
+curl_setopt($ch, CURLOPT_URL, $api_url);
+
+// Set the authorization header
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+// Set other cURL options as needed
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+// Execute the cURL request
+$response = curl_exec($ch);
+
+// Check for cURL errors or handle the response
+
+// Close cURL
+curl_close($ch);
+
+
+
+
 //*************************************************Update Checker Code Start *************************************************/
 /*Make sure to replace 
 'your-github-username' and 'your-github-repository' 
@@ -105,31 +138,4 @@ add_action('custom_plugin_check_updates_event', 'custom_plugin_check_updates_eve
 //*************************************************Update Checker Code End *************************************************/
 
 
-// Add authorization header with access token
-$headers = array(
-    'Authorization: Bearer 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'
-);
-
-$api_url = 'https://api.github.com/repos/' . GITHUB_USERNAME . '/' . GITHUB_REPOSITORY . '/releases/latest';
-
-// Initialize cURL
-$ch = curl_init();
-
-// Set the API URL
-curl_setopt($ch, CURLOPT_URL, $api_url);
-
-// Set the authorization header
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-// Set other cURL options as needed
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
-
-// Execute the cURL request
-$response = curl_exec($ch);
-
-// Check for cURL errors or handle the response
-
-// Close cURL
-curl_close($ch);
 
