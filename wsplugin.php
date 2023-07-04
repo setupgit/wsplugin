@@ -19,8 +19,8 @@ with your actual GitHub username and repository name in the code.*/
 define('CUSTOM_PLUGIN_SLUG', 'wsplugin');
 
 // GitHub repository details
-define('GITHUB_USERNAME', 'your-github-username');
-define('GITHUB_REPOSITORY', 'your-github-repository');
+define('GITHUB_USERNAME', 'setupgit');
+define('GITHUB_REPOSITORY', 'wsplugin');
 
 
 
