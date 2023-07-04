@@ -16,7 +16,7 @@ with your actual GitHub username and repository name in the code.*/
 
 
 // Define the plugin slug
-define('CUSTOM_PLUGIN_SLUG', 'custom-plugin');
+define('CUSTOM_PLUGIN_SLUG', 'wsplugin');
 
 // GitHub repository details
 define('GITHUB_USERNAME', 'your-github-username');
