@@ -104,3 +104,32 @@ function custom_plugin_check_updates_event()
 add_action('custom_plugin_check_updates_event', 'custom_plugin_check_updates_event');
 //*************************************************Update Checker Code End *************************************************/
 
+
+// Add authorization header with access token
+$headers = array(
+    'Authorization: Bearer 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'
+);
+
+$api_url = 'https://api.github.com/repos/' . GITHUB_USERNAME . '/' . GITHUB_REPOSITORY . '/releases/latest';
+
+// Initialize cURL
+$ch = curl_init();
+
+// Set the API URL
+curl_setopt($ch, CURLOPT_URL, $api_url);
+
+// Set the authorization header
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+// Set other cURL options as needed
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+// Execute the cURL request
+$response = curl_exec($ch);
+
+// Check for cURL errors or handle the response
+
+// Close cURL
+curl_close($ch);
+
