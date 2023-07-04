@@ -3,7 +3,7 @@
 Plugin Name: Custom Plugin Updater
 Plugin URI: https://example.com
 Description: Notifies the user when a new update is available for the custom plugin.
-Version: 2.0
+Version: 3.0
 Author: Your Name
 Author URI: https://example.com
 */
@@ -64,7 +64,7 @@ function custom_plugin_check_for_updates()
     $stored_version = get_option('custom_plugin_version');
 
     // Current version of the plugin
-    $current_version = '2.0'; // Replace with your current plugin version
+    $current_version = '3.0'; // Replace with your current plugin version
 
     // Check if a new update is available
     if (version_compare($current_version, $stored_version, '>')) {
@@ -94,7 +94,7 @@ function custom_plugin_display_update_notification()
 // Store the plugin version
 function custom_plugin_store_version()
 {
-    $current_version = '2.0'; // Replace with your current plugin version
+    $current_version = '3.0'; // Replace with your current plugin version
 
     // Store the version of the plugin
     update_option('custom_plugin_version', $current_version);
