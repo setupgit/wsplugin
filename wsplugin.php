@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Custom Plugin Updater
-Plugin URI: https://example.com
+Plugin URI: https://github.com/setupgit/wsplugin
 Description: Notifies the user when a new update is available for the custom plugin.
 Version: 3.0
 Author: Your Name
@@ -77,7 +77,7 @@ add_action('admin_init', 'custom_plugin_check_for_updates');
 // Display update notification
 function custom_plugin_display_update_notification()
 {
-    $plugin_data = get_plugin_data(__FILE__);
+    $plugin_data = get_plugin_data(__FILE__);                                                                                                           
     $plugin_name = $plugin_data['Name'];
 
     $update_url = admin_url('update-core.php');
@@ -113,6 +113,14 @@ add_action('wp', 'custom_plugin_schedule_update_check');
 // Perform update check when the scheduled event runs
 function custom_plugin_check_updates_event()
 {
+    /*
+    $update_data = array(
+    'slug' => plugin_basename(__FILE__),
+    'new_version' => $latest_version,
+    'url' => 'https://github.com/setupgit/wsplugin/releases', // Replace with your GitHub repository's release page URL
+    'package' => '',
+    );
+    */
     $plugin_data = get_plugin_data(__FILE__);
     $current_version = $plugin_data['Version'];
 
