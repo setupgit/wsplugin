@@ -11,7 +11,7 @@ Author URI: https://example.com
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/setupgit/wsplugin/',
+	'https://github.com/setupgit/wsplugin',
 	__FILE__,
 	'wsplugin'
 );
@@ -20,7 +20,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
-$myUpdateChecker->setAuthentication('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');
+$myUpdateChecker->setAuthentication('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');
 
 
 
