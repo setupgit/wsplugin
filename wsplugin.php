@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Custom Plugin Updater
+Plugin Name: wsplugin
 Plugin URI: https://github.com/setupgit/wsplugin
 Description: Notifies the user when a new update is available for the custom plugin.
 Version: 3.0
@@ -9,8 +9,62 @@ Author URI: https://example.com
 */
 
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/setupgit/wsplugin/',
+	__FILE__,
+	'wsplugin'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('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');
 
 
+
+
+
+/*
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/iamsajidjaved/Auto-update-WordPress-plugin-or-Theme-from-Github',
+	__FILE__,
+	'FunPlugin'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('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');
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*************************************************Update Checker Auto Code Start *************************************************/
+/***** 
 // Add authorization header with access token
 $headers = array(
     'Authorization: Bearer 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'
@@ -38,7 +92,8 @@ $response = curl_exec($ch);
 
 // Close cURL
 curl_close($ch);
-
+****/
+//*************************************************Update Checker Auto Code End *************************************************/
 
 
 
@@ -47,7 +102,7 @@ curl_close($ch);
 'your-github-username' and 'your-github-repository' 
 with your actual GitHub username and repository name in the code.*/
 
-
+/***
 // Define the plugin slug
 define('CUSTOM_PLUGIN_SLUG', 'wsplugin');
 
@@ -114,14 +169,14 @@ add_action('wp', 'custom_plugin_schedule_update_check');
 // Perform update check when the scheduled event runs
 function custom_plugin_check_updates_event()
 {
-    /*
-    $update_data = array(
-    'slug' => plugin_basename(__FILE__),
-    'new_version' => $latest_version,
-    'url' => 'https://github.com/setupgit/wsplugin/releases', // Replace with your GitHub repository's release page URL
-    'package' => '',
-    );
-    */
+    
+    //$update_data = array(
+    //'slug' => plugin_basename(__FILE__),
+    //'new_version' => $latest_version,
+    //'url' => 'https://github.com/setupgit/wsplugin/releases', // Replace with your GitHub repository's release page URL
+    //'package' => '',
+    //);
+
     $plugin_data = get_plugin_data(__FILE__);
     $current_version = $plugin_data['Version'];
 
@@ -144,7 +199,5 @@ function custom_plugin_check_updates_event()
     }
 }
 add_action('custom_plugin_check_updates_event', 'custom_plugin_check_updates_event');
+***/
 //*************************************************Update Checker Code End *************************************************/
-
-
-
