@@ -10,8 +10,8 @@ Author URI: https://example.com
 
 
 require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v5_PucFactory::buildUpdateChecker(
-	'https://github.com/setupgit/wsplugin',
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/setupgit/wsplugin/',
 	__FILE__,
 	'wsplugin'
 );
